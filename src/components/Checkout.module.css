@@ -1,0 +1,217 @@
+@font-face {
+    font-family: "Akt";
+    src: url("../src/assets/Akt-Light.ttf");
+}
+@font-face {
+    font-family: "Akt light";
+    src: url("../src/assets/Akt-ExtraLight.ttf");
+}
+@font-face {
+    font-family: "Akt bold";
+    src: url("../src/assets/Akt-Bold.ttf");
+}
+@font-face {
+    font-family: "Akt regular";
+    src: url("../src/assets/Akt-Regular.ttf");
+}
+.checkout-page{
+    background-color: #818181;
+    padding-top: 5rem;
+    padding-left: 1rem;
+}
+.empty-cart-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    gap: 20px;
+}
+.checkout-wrapper{
+    display: flex;
+    padding-top: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.checkout-title{
+    font-family: "Akt light";
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0 0 16px 0;
+    color: #0f172a;
+}
+.checkout-products-con{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.checkout-product-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.checkout-product-image{
+    width: 370px; /* 370px */
+    height: 230px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(13,17,26,0.06);
+}
+.checkout-product-text-con{
+    padding-top: 1rem;
+}
+.checkout-product-name, .checkout-product-price{
+    font-family: "Akt bold";
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.checkout-quantity-control-con{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 15px;
+    gap: 5px;
+    font-size: 20px;
+}
+.checkout-quantity-control1, .checkout-quantity-control2{
+    cursor: pointer;
+    border: 1px solid rgb(65, 65, 65);
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-size: 15px;
+}
+
+.checkout-total-price{
+   font-family: "Akt light";
+   font-size: 15px;
+   margin-bottom: 15px;
+}
+.checkout-remove-btn{
+    cursor: pointer;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background-color: rgb(94, 93, 93);
+    color: white;
+}
+.checkout-quantity-control-con2{
+    font-family: "Akt light";
+    word-spacing: 5px;
+    display: flex;
+    justify-content: end;
+}
+.checkout-quantity-control-wrapper{
+    margin: 1rem 5rem;
+}
+.checkout-subtotal{
+    font-family: "Akt regular";
+    font-size: 16px;
+    color: #374151;
+    margin-bottom: 8px;
+}
+.checkout-tax{
+    font-family: "Akt regular";
+    font-size: 15px;
+    color: #4b5563;
+    margin-bottom: 8px;
+}
+.checkout-total{
+    font-family: "Akt bold";
+    font-size: 18px;
+    color: #111827;
+    margin-bottom: 14px;
+}
+.place-order-btn-con{
+    display:flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+.place-order-btn{
+    background: linear-gradient(90deg, #111827, #374151);
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(17,24,39,0.12);
+}
+.place-order-btn:active{ transform: translateY(1px) }
+
+/* Layout adjustments */
+
+
+.checkout-product-con{
+    width: 400px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(13,17,26,0.04);
+    
+}
+
+.checkout-product-text-con{
+    padding-top: 0;
+    flex: 1;
+}
+
+.checkout-quantity-control-con{
+    gap: 10px;
+}
+
+/* Summary column */
+.checkout-quantity-control-con2{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkout-quantity-control-wrapper{
+    background:#fff;
+    padding: 18px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(13,17,26,0.06);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px){
+    .checkout-wrapper{ max-width: 960px; padding: 0 16px }
+    .checkout-product-image{ width: 240px; height: 160px }
+    .checkout-quantity-control-con2{ flex: 0 0 260px }
+}
+
+@media (max-width: 720px){
+    .checkout-wrapper{ flex-direction: column; padding: 0 14px }
+    .checkout-quantity-control-con2{ justify-content: center; }
+    .checkout-quantity-control-wrapper{ width: 100%; }
+    .checkout-product-image{ width: 140px; height: 100px }
+    .checkout-product-con{ flex-direction: row; }
+}
+
+@media (max-width: 420px){
+    .checkout-product-con{ flex-direction: column; align-items: center }
+    .checkout-product-image{ width: 100%; height: 180px }
+    .checkout-product-text-con{ text-align: center }
+    .checkout-quantity-control-con2{ justify-content: center }
+}
+
+/* Desktop: center contents inside each product container */
+@media (min-width: 721px){
+    .checkout-product-con{
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+    .checkout-product-text-con{
+        text-align: center;
+    }
+}

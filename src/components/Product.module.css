@@ -1,0 +1,295 @@
+@font-face {
+    font-family: "Akt";
+    src: url("../src/assets/Akt-Light.ttf");
+}
+@font-face {
+    font-family: "Akt light";
+    src: url("../src/assets/Akt-ExtraLight.ttf");
+}
+@font-face {
+    font-family: "Akt bold";
+    src: url("../src/assets/Akt-Bold.ttf");
+}
+@font-face {
+    font-family: "Akt regular";
+    src: url("../src/assets/Akt-Regular.ttf");
+}
+.products-page{
+    background-color: #d3d2d2;
+}
+.products-intro-con{
+    margin-top: 2rem;
+    background-image: url('../assets/model2.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0px;
+    padding-left: 50px;
+    color: rgb(34, 34, 34);
+}
+.products-first-text{
+    font-size: 50px;
+}
+.products-second-text{
+    font-size: 20px;
+}
+.products-container{
+    display: flex;
+    justify-content: center;
+}
+.products-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.products-content-con{
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+.products-image{
+    border-radius: 5px 5px 0px 0px;
+    width: 315px;
+    height: 270px;
+}
+.products-name{
+    font-family: "Akt bold";
+    padding-left: 20px;
+    width: 95%;
+}
+.products-price{
+    font-family: "Akt light";
+    padding-left: 20px;
+}
+.products-more-actions{
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.products-more-actions span{
+    font-family: "Akt light";
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.products-span1{
+    background-color: rgb(94, 93, 93);
+}
+.products-span2{
+    background-color: royalblue;
+}
+.products-span1:hover, .products-span2:hover{
+    cursor: pointer;
+}
+.search-container{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: end;
+}
+.search-wrapper{
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-right: 20px;
+}
+.search-input{
+    border: none;
+    width: 500px;
+    padding: 10px 10px;
+}
+.search-input:focus{
+    outline: none;
+}
+.no-available-products{
+    margin: 100px 0px;
+    font-size: 50px;
+    color: rgb(22, 22, 22);
+}
+
+@media  screen and (max-width: 600px) {
+    .products-intro-con{
+        margin-top: 0rem;
+        padding: 180px 0px;
+        padding-left: 20px;
+    }
+    .products-first-text{
+        font-size: 40px;
+    }
+    .products-second-text{
+        font-family: "Akt light";
+        font-size: 17px;
+    }
+    .products-wrapper{
+        justify-content: flex-start;
+        margin-left: 20px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    .products-content-con{
+        width: 70%;
+        align-items: center;
+        justify-content: center;
+    }
+    .products-image{
+        border-radius: 5px 5px 0px 0px;
+        width: 230px;
+        height: 200px;
+    }
+    .products-name{
+        text-align: center;
+        width: 85%;
+    }
+    .products-price{
+        padding-left: 0px;
+    }
+    .products-more-actions{
+        padding-left: 0px;
+    }
+    .products-more-actions span{
+        font-size: 15px;
+        padding: 7px 7px;
+    }
+    .search-container{
+        margin: 20px 0px;
+        display: flex;
+        justify-content: center;
+    }
+    .search-wrapper{
+        margin-right: 0px;
+    }
+    .search-input{
+        width: 330px;
+    }
+    .search-input:focus{
+        outline: none;
+    }
+    .no-available-products{
+        font-size: 35px;
+    }
+}
+
+@media (min-width:601px) and (max-width: 810px){
+    .products-intro-con{
+        margin-top: 0rem;
+        padding: 180px 0px;
+        padding-left: 20px;
+    }
+    .products-first-text{
+        font-size: 40px;
+    }
+    .products-second-text{
+        font-family: "Akt light";
+        font-size: 17px;
+    }
+    .products-wrapper{
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        margin-left: 20px;
+        overflow-x: auto;
+    }
+    .products-content-con{
+        width: 47%;
+        align-items: center;
+        justify-content: center;
+    }
+    .products-image{
+        border-radius: 5px 5px 0px 0px;
+        width: 230px;
+        height: 200px;
+    }
+    .products-name{
+        text-align: center;
+        width: 85%;
+    }
+    .products-price{
+        padding-left: 0px;
+    }
+    .products-more-actions{
+        padding-left: 0px;
+    }
+    .products-more-actions span{
+        font-size: 15px;
+        padding: 7px 7px;
+    }
+    .search-container{
+        margin: 20px 0px;
+        display: flex;
+        justify-content: end;
+    }
+    .search-wrapper{
+        margin-right: 10px;
+    }
+    .search-input{
+        width: 430px;
+    }
+    .search-input:focus{
+        outline: none;
+    }
+    .no-available-products{
+        font-size: 35px;
+    }
+}
+
+@media (min-width:811px) and (max-width: 1000px) {
+    .products-intro-con{
+        margin-top: 0rem;
+        padding: 180px 0px;
+        padding-left: 20px;
+    }
+    .products-first-text{
+        font-size: 40px;
+    }
+    .products-second-text{
+        font-family: "Akt light";
+        font-size: 17px;
+    }
+    .products-wrapper{
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        margin-left: 20px;
+        overflow-x: auto;
+    }
+    .products-content-con{
+        width: 47%;
+        align-items: center;
+        justify-content: center;
+    }
+    .products-image{
+        border-radius: 5px 5px 0px 0px;
+        width: 230px;
+        height: 200px;
+    }
+    .products-name{
+        text-align: center;
+        width: 85%;
+    }
+    .products-price{
+        padding-left: 0px;
+    }
+    .products-more-actions{
+        padding-left: 0px;
+    }
+    .products-more-actions span{
+        font-size: 15px;
+        padding: 7px 7px;
+    }
+    .search-container{
+        margin: 20px 0px;
+        display: flex;
+        justify-content: end;
+    }
+    .search-wrapper{
+        margin-right: 10px;
+    }
+    .search-input{
+        width: 430px;
+    }
+    .search-input:focus{
+        outline: none;
+    }
+    .no-available-products{
+        font-size: 35px;
+    }
+}
