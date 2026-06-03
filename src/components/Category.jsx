@@ -78,7 +78,7 @@ export default function Category({ categoryName: propCategory }) {
           {filtered.map(product=> (
             <article key={product.id} className={styles.card}>
               <div className={styles.imageWrap}>
-                <img src={product.image} alt={product.name} className={styles.image} />
+                <img loading="lazy" src={product.image} alt={product.name} className={styles.image} />
               </div>
               <div className={styles.cardBody}>
                 <h3 className={styles.productName}>{product.name}</h3>

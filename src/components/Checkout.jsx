@@ -33,7 +33,7 @@ export default function Checkout(){
         <div className={styles['checkout-products-con']}>
           {items.map(item => (
             <div className={styles['checkout-product-con']} key={item.id}>
-              {item.image && <img className={styles['checkout-product-image']} src={item.image} alt={item.name} />}
+              {item.image && <img loading="lazy" className={styles['checkout-product-image']} src={item.image} alt={item.name} />}
               <div className={styles['checkout-product-text-con']}>
               <div className={styles['checkout-product-name']}>{item.name}</div>
               <div className={styles['checkout-product-price']}>${item.price}.00</div>

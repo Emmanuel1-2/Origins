@@ -35,7 +35,7 @@ export default function Product() {
             const inCartQuantity = inCart ? `(${inCart.quantity ?? inCart.qty ?? 1})` : "";
             return (
             <div key={product.id} className={styles['products-content-con']}>
-              <img className={styles['products-image']} width={300} src={product.image} alt="" />
+              <img className={styles['products-image']} width={300} loading="lazy" src={product.image} alt="" />
               <div className={styles['products-name']}>{product.name}</div>
               <div className={styles['products-price']}>${product.price}.00</div>
               <div className={styles['products-more-actions']}>

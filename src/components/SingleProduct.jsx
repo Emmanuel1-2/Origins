@@ -25,7 +25,7 @@ export default function Singleproduct() {
   return (
     <div className={styles['single-product-container']} style={{marginTop: "5rem"}}>
       <div className={styles['single-product-wrapper']}>
-        <img className={styles['single-product-image']} src={product.image} alt="" />
+        <img className={styles['single-product-image']} loading="lazy" src={product.image} alt="" />
         <div className={styles['single-products-text-con']}>
           <p className={styles['single-product-text1']}>{product.name}</p>
           <p className={styles['single-product-text2']}>${product.price}.00</p>

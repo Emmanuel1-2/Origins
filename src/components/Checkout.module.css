@@ -1,19 +1,4 @@
-@font-face {
-    font-family: "Akt";
-    src: url("../src/assets/Akt-Light.ttf");
-}
-@font-face {
-    font-family: "Akt light";
-    src: url("../src/assets/Akt-ExtraLight.ttf");
-}
-@font-face {
-    font-family: "Akt bold";
-    src: url("../src/assets/Akt-Bold.ttf");
-}
-@font-face {
-    font-family: "Akt regular";
-    src: url("../src/assets/Akt-Regular.ttf");
-}
+
 .checkout-page{
     background-color: #818181;
     padding-top: 5rem;

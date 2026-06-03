@@ -6,7 +6,7 @@ export default function CartProvider({children}) {
     const [cartItems, setcartItems] = useState([]);
 
     function addToCart(productId){
-        let checked = cartItems.find((item) => item.id == productId);
+        let checked = cartItems.find((item) => item.id === productId);
 
         if(checked){
             const itemQuantity = checked.quantity;
@@ -19,17 +19,17 @@ export default function CartProvider({children}) {
     }
 
     function decreaseQuantity(productId){
-        const found = cartItems.find(item => item.id == productId);
+        const found = cartItems.find(item => item.id === productId);
         if(!found) return;
         if(found.quantity > 1){
-            setcartItems(cartItems.map(item => item.id == productId ? {...item, quantity: item.quantity - 1} : item))
+            setcartItems(cartItems.map(item => item.id === productId ? {...item, quantity: item.quantity - 1} : item))
         } else {
-            setcartItems(cartItems.filter(item => item.id != productId))
+            setcartItems(cartItems.filter(item => item.id !== productId))
         }
     }
 
     function removeFromCart(productId){
-        setcartItems(cartItems.filter(item => item.id != productId))
+        setcartItems(cartItems.filter(item => item.id !== productId))
     }
 
     function clearCart(){

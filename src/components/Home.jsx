@@ -1,29 +1,26 @@
-import { React, useEffect } from "react";
-import { data, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import Productbox from "./Productbox";
 import Accordion from "./Accordion";
 import { useForm } from "react-hook-form";
 
-
 export default function Home() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const {register, handleSubmit, formState:{errors}} = useForm();
-  
-
-  function onSubmit(data){
-    alert(`You have successfully subscribed to the newsletter with email ${data.email}`)
-
-    document.getElementById("emailInput").value = ""
-    document.getElementById("passwordInput").value = ""
+  function onSubmit(data) {
+    alert(`You have successfully subscribed to the newsletter with email ${data.email}`);
+    const emailEl = document.getElementById("emailInput");
+    if (emailEl) emailEl.value = "";
   }
+
   function moveProductsLeft() {
     const productsCon = document.getElementById("homeProducts");
-    productsCon.scrollBy({ left: -330, behavior: "smooth" });
+    if (productsCon) productsCon.scrollBy({ left: -330, behavior: "smooth" });
   }
 
   function moveProductsRight() {
     const productsCon = document.getElementById("homeProducts");
-    productsCon.scrollBy({ left: 330, behavior: "smooth" });
+    if (productsCon) productsCon.scrollBy({ left: 330, behavior: "smooth" });
   }
 
   return (
@@ -60,6 +57,7 @@ export default function Home() {
               src="https://images.unsplash.com/photo-1679394042175-717ca34ef0f2?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               width={400}
               height={380}
+              loading="lazy"
               alt=""
             />
           </Link>
@@ -92,25 +90,11 @@ export default function Home() {
               className="moveProductsCon"
               style={{ display: "flex", gap: "10px" }}
             >
-              <span
-                onClick={moveProductsLeft}
-                className="moveProductsBtn"
-                id="less"
-              >
-                <i
-                  style={{ color: "grey" }}
-                  className="fa-solid fa-less-than"
-                ></i>
+              <span onClick={moveProductsLeft} className="moveProductsBtn" id="less">
+                <i style={{ color: "grey" }} className="fa-solid fa-less-than"></i>
               </span>{" "}
-              <span
-                onClick={moveProductsRight}
-                className="moveProductsBtn"
-                id="great"
-              >
-                <i
-                  style={{ color: "grey" }}
-                  className="fa-solid fa-greater-than"
-                ></i>
+              <span onClick={moveProductsRight} className="moveProductsBtn" id="great">
+                <i style={{ color: "grey" }} className="fa-solid fa-greater-than"></i>
               </span>
             </div>
           </div>
@@ -168,6 +152,7 @@ export default function Home() {
           <img
             className="radiance-img"
             src="https://plus.unsplash.com/premium_photo-1677283511255-b99767d42a48?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            loading="lazy"
             alt=""
           />
 
@@ -208,6 +193,7 @@ export default function Home() {
               <img
                 className="shop-by-cat-img"
                 src="https://images.unsplash.com/photo-1710301616379-74c9a2514017?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                loading="lazy"
                 alt=""
               />
               <div id="first-cat-text" className="shop-by-cat-text">
@@ -221,6 +207,7 @@ export default function Home() {
               <img
                 className="shop-by-cat-img"
                 src="https://plus.unsplash.com/premium_photo-1683133990522-4155deaacbbb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                loading="lazy"
                 alt=""
               />
               <div id="second-cat-text" className="shop-by-cat-text">
@@ -233,7 +220,8 @@ export default function Home() {
             <Link to={"/category/BodyCare"}>
               <img
                 className="shop-by-cat-img"
-                src="https://plus.unsplash.com/premium_photo-1679046949226-b9d0870ab9c9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://plus.unsplash.com/premium_photo-1679046949226-b9d0870ab9c9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0"
+                loading="lazy"
                 alt=""
               />
               <div id="third-cat-text" className="shop-by-cat-text">
@@ -247,7 +235,8 @@ export default function Home() {
               <img
                 id="fourth-cat-img"
                 className="shop-by-cat-img"
-                src="https://plus.unsplash.com/premium_photo-1658506780171-03ad7daca24e?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://plus.unsplash.com/premium_photo-1658506780171-03ad7daca24e?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0"
+                loading="lazy"
                 alt=""
               />
               <div id="fourth-cat-text" className="shop-by-cat-text">
@@ -261,7 +250,8 @@ export default function Home() {
               <img
                 id="fifth-cat-img"
                 className="shop-by-cat-img"
-                src="https://plus.unsplash.com/premium_photo-1679046949226-b9d0870ab9c9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://plus.unsplash.com/premium_photo-1679046949226-b9d0870ab9c9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0"
+                loading="lazy"
                 alt=""
               />
               <div id="fifth-cat-text" className="shop-by-cat-text">
@@ -274,22 +264,10 @@ export default function Home() {
 
       <div className="get-20-container">
         <div className="get-20-wrapper">
-          <p className="get-20-first-text">
-            Get 20% off on all Origins skincare products!
-          </p>
+          <p className="get-20-first-text">Get 20% off on all Origins skincare products!</p>
           <p className="get-20-sec-text">Elevate your beauty routine now.</p>
-          <span
-            className="shop-now"
-            style={{
-              borderRadius: "15px",
-              padding: "13px 20px",
-              backgroundColor: "#4b4847",
-              marginTop: "20px",
-            }}
-          >
-            <Link className="first-link" to="/product">
-              Shop Now
-            </Link>
+          <span className="shop-now" style={{ borderRadius: "15px", padding: "13px 20px", backgroundColor: "#4b4847", marginTop: "20px" }}>
+            <Link className="first-link" to="/product">Shop Now</Link>
           </span>
         </div>
       </div>
@@ -306,81 +284,38 @@ export default function Home() {
           </div>
 
           <div className="customer-feedback-con">
-
             <div className="customer-feedback-content">
-              <img className="customer-feedback-img" src="https://images.unsplash.com/photo-1599022484220-967921f2217c?q=80&w=371&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+              <img className="customer-feedback-img" src="https://images.unsplash.com/photo-1599022484220-967921f2217c?q=80&w=371&auto=format&fit=crop&ixlib=rb-4.1.0" loading="lazy" alt="" />
               <div className="customer-feedback-text">
                 <p className="customer-feedback-first-text">Glowing Skin, All Day!</p>
-                <p className="customer-feedback-sec-text">I've been using Origins face serum for a few weeks now and my skin has never looked better! My skin feels so soft and I have a natural glow that lasts all day. It's become an essential part of my routine.</p><br />
+                <p className="customer-feedback-sec-text">I've been using Origins face serum and my skin feels so soft and radiant.</p>
                 <div className="customer-feedback-stars-con"><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
-
                 <div className="customer-feedback-profile-con">
-                  <img className="customer-feedback-profile-img" src="https://plus.unsplash.com/premium_photo-1705018500148-383c65193a0f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-
+                  <img className="customer-feedback-profile-img" src="https://plus.unsplash.com/premium_photo-1705018500148-383c65193a0f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0" loading="lazy" alt="" />
                   <div className="customer-feedback-profile-text">
                     <p className="customer-feedback-profile-name">Jessica</p>
-                    <p className="customer-feedback-profile-role"><i class="fa-solid fa-circle-check"></i>Verified Buyer</p>
+                    <p className="customer-feedback-profile-role"><i className="fa-solid fa-circle-check"></i>Verified Buyer</p>
                   </div>
                 </div>
               </div>
-              
             </div>
-          
+
             <div className="customer-feedback-content">
-              <img className="customer-feedback-img" src="https://images.unsplash.com/photo-1665763630810-e6251bdd392d?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+              <img className="customer-feedback-img" src="https://images.unsplash.com/photo-1665763630810-e6251bdd392d?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0" loading="lazy" alt="" />
               <div className="customer-feedback-text">
                 <p className="customer-feedback-first-text">Instant Skin Revival And Glow</p>
-                <p className="customer-feedback-sec-text">I've been using Origins products for years and they never disappoint. The instant results are amazing. My skin feels so soft and I have a natutal glow that lasts all day. Thank you origins ❤️</p> <br />
-                <div className="customer-feedback-stars-con"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-
+                <p className="customer-feedback-sec-text">The instant results are amazing and long-lasting.</p>
+                <div className="customer-feedback-stars-con"><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
                 <div className="customer-feedback-profile-con">
-                  <img className="customer-feedback-profile-img" src="https://plus.unsplash.com/premium_photo-1705018500148-383c65193a0f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-
+                  <img className="customer-feedback-profile-img" src="https://plus.unsplash.com/premium_photo-1705018500148-383c65193a0f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0" loading="lazy" alt="" />
                   <div className="customer-feedback-profile-text">
-                    <p className="customer-feedback-profile-name">Jessica</p>
-                    <p className="customer-feedback-profile-role"><i class="fa-solid fa-circle-check"></i>Verified Buyer</p>
+                    <p className="customer-feedback-profile-name">Alex</p>
+                    <p className="customer-feedback-profile-role"><i className="fa-solid fa-circle-check"></i>Verified Buyer</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="customer-feedback-content">
-              <img className="customer-feedback-img" src="https://images.unsplash.com/photo-1746676266118-18e4d6d402a2?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-              <div className="customer-feedback-text">
-                <p className="customer-feedback-first-text">Confidence in Your Skin</p>
-                <p className="customer-feedback-sec-text">Using Origins products has boosted my confidence in my skin's appearance and health. I experienced a significant improvement in my skin's texture and tone!. I highly recommend them</p> <br />
-                <div className="customer-feedback-stars-con"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-
-                <div className="customer-feedback-profile-con">
-                  <img className="customer-feedback-profile-img" src="https://plus.unsplash.com/premium_photo-1705018500148-383c65193a0f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-
-                  <div className="customer-feedback-profile-text">
-                    <p className="customer-feedback-profile-name">Jessica</p>
-                    <p className="customer-feedback-profile-role"><i class="fa-solid fa-circle-check"></i>Verified Buyer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="customer-feedback-content">
-              <img className="customer-feedback-img" src="https://images.unsplash.com/photo-1715750968540-841103c78d47?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-              <div className="customer-feedback-text">
-                <p className="customer-feedback-first-text">Transform Your Skin</p>
-                <p className="customer-feedback-sec-text">Origins products have completely transformed my skin. I've never felt more comfortable, confident, daring, outstanding, bold and beautiful in my skin and  appearance.</p> <br />
-                <div className="customer-feedback-stars-con"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-
-                <div className="customer-feedback-profile-con">
-                  <img className="customer-feedback-profile-img" src="https://plus.unsplash.com/premium_photo-1705018500148-383c65193a0f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-
-                  <div className="customer-feedback-profile-text">
-                    <p className="customer-feedback-profile-name">Jessica</p>
-                    <p className="customer-feedback-profile-role"   ><i class="fa-solid fa-circle-check"></i>Verified Buyer</p>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>  
+          </div>
         </div>
       </div>
 
@@ -388,21 +323,15 @@ export default function Home() {
         <div className="newsletter-wrapper">
           <p className="newsletter-title">Join our Origins newsletter and Get Exclusive offers</p>
           <div className="newsletter-email-container">
-            <input className="newsletter-input" id="emailInput" type="email" placeholder="Your Email"{...register("email", {required: "Email is required"})}/>
-            
-            
+            <input className="newsletter-input" id="emailInput" type="email" placeholder="Your Email" {...register("email", {required: "Email is required"})} />
             <br />
-            
             <button className="newsletter-button" type="submit">Subscribe</button>
           </div>
           <br />
           {errors.email && <p style={{color: "crimson"}}>{errors.email.message}</p>}
         </div>
       </form>
-         
-
 
     </div>
-    
   );
 }

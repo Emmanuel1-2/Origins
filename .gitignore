@@ -83,4 +83,4 @@ vite.config.ts.timestamp-*
 .dynamodb/
 .serverless/
 
->>>>>>> 35478ff3b1b16272439c9781691e0036b14ce9a1
+

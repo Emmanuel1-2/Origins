@@ -7,18 +7,25 @@ import { ClerkProvider } from '@clerk/clerk-react'
 
 const clerk_key = import.meta.env.VITE_CLERK_KEY;
 
-console.log(clerk_key);
-if(!clerk_key){
-  throw new Error("Key Was Not Found")
+const root = createRoot(document.getElementById('root'));
+
+if (clerk_key) {
+  root.render(
+    <StrictMode>
+      <BrowserRouter>
+        <ClerkProvider publishableKey={clerk_key}>
+          <App hasClerk={true} />
+        </ClerkProvider>
+      </BrowserRouter>
+    </StrictMode>
+  );
+} else {
+  console.warn('VITE_CLERK_KEY not found — rendering without Clerk (authentication disabled).');
+  root.render(
+    <StrictMode>
+      <BrowserRouter>
+        <App hasClerk={false} />
+      </BrowserRouter>
+    </StrictMode>
+  );
 }
-
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <ClerkProvider publishableKey={clerk_key}>
-        <App />
-      </ClerkProvider>
-    </BrowserRouter>
-  </StrictMode>
-)

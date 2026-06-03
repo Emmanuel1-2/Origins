@@ -2,17 +2,15 @@ import React from 'react'
 import Home from './components/Home'
 import Product from './components/Product'
 import Checkout from './components/Checkout'
-import Arrayofproducts from './components/Arrayofproducts'
 import Category from './components/Category'
 import Singleproduct from './components/SingleProduct'
 import Scrolltotop from './components/Scrolltotop'
 import {Link, Routes, Route} from 'react-router-dom'
 import CartProvider from './components/Cartcontext'
-import getProducts from './components/Productdata'
+import originsIcon from './assets/origins.ico'
 import { SignIn, SignUp, SignedIn, SignedOut, SignInButton, SignOutButton } from '@clerk/clerk-react'
 
-export default function App() {
-  let productItem = getProducts();
+export default function App({ hasClerk = true }) {
   function openMenu(){
     document.getElementById('close').style.display = "block";
     document.getElementById('open').style.display = "none";
@@ -29,7 +27,7 @@ export default function App() {
     <div className='app-container'>
       <div className='navigation-container'>
         <nav className='brand-name-con'>
-          <img style={{width: "30px", height: "50px", objectFit: "cover"}} src="../src/assets/origins.ico" alt="" />
+          <img style={{width: "30px", height: "50px", objectFit: "cover"}} src={originsIcon} alt="" />
           <p className='brand-name'>rigins</p>
           <nav className='desktop-nav'>
             <Link className='navigation' to='/'>Home</Link>
@@ -42,26 +40,40 @@ export default function App() {
         
         <nav className='auth-nav'>
           <Link style={{marginRight: "10px"}} className='navigation' to='/checkout'><i className="fa-solid fa-cart-arrow-down"></i></Link>
-          <SignedOut>
-            <Link style={{border: "1px solid black", padding: "5px 10px", borderRadius: "5px", backgroundColor: "#242323", color: "white", fontSize: "15px"}} className='auth-navigation' to='/login'>Login</Link>
-          </SignedOut>
-          <SignedIn>
-            
-              <SignOutButton className='sign-out-button' />
-            
-          </SignedIn>
-          <Link style={{border: "1px solid black", padding: "5px 10px", borderRadius: "5px", backgroundColor: "#242323", color: "white", fontSize: "15px"}} className='auth-navigation' to='/signup'>Sign up</Link>
-          
+          {hasClerk ? (
+            <>
+              <SignedOut>
+                <Link style={{border: "1px solid black", padding: "5px 10px", borderRadius: "5px", backgroundColor: "#242323", color: "white", fontSize: "15px"}} className='auth-navigation' to='/login'>Login</Link>
+              </SignedOut>
+              <SignedIn>
+                <SignOutButton className='sign-out-button' />
+              </SignedIn>
+              <Link style={{border: "1px solid black", padding: "5px 10px", borderRadius: "5px", backgroundColor: "#242323", color: "white", fontSize: "15px"}} className='auth-navigation' to='/signup'>Sign up</Link>
+            </>
+          ) : (
+            <>
+              <Link style={{border: "1px solid black", padding: "5px 10px", borderRadius: "5px", backgroundColor: "#242323", color: "white", fontSize: "15px"}} className='auth-navigation' to='/login'>Login</Link>
+              <Link style={{border: "1px solid black", padding: "5px 10px", borderRadius: "5px", backgroundColor: "#242323", color: "white", fontSize: "15px"}} className='auth-navigation' to='/signup'>Sign up</Link>
+            </>
+          )}
         </nav>
         
         <nav className='mobile-nav'>
           <span className='mobile-cart-con'>
-            <SignedOut>
-              <Link style={{border: "1px solid black", padding: "5px 10px", borderRadius: "5px", backgroundColor: "#242323", color: "white", fontSize: "15px"}} className='auth-navigation' to='/login'>Login</Link>
-            </SignedOut>
-            <SignedIn>
-              <SignOutButton className='sign-out-button' />
-            </SignedIn>
+            {hasClerk ? (
+              <>
+                <SignedOut>
+                  <Link style={{border: "1px solid black", padding: "5px 10px", borderRadius: "5px", backgroundColor: "#242323", color: "white", fontSize: "15px"}} className='auth-navigation' to='/login'>Login</Link>
+                </SignedOut>
+                <SignedIn>
+                  <SignOutButton className='sign-out-button' />
+                </SignedIn>
+              </>
+            ) : (
+              <>
+                <Link style={{border: "1px solid black", padding: "5px 10px", borderRadius: "5px", backgroundColor: "#242323", color: "white", fontSize: "15px"}} className='auth-navigation' to='/login'>Login</Link>
+              </>
+            )}
           </span>
           <div className='mobile-nav-bars' style={{display: "inline-block", marginLeft: "10px", marginTop: "5px"}}>
             <i id='open' className="fa-solid fa-bars" onClick={openMenu}></i>
@@ -87,12 +99,11 @@ export default function App() {
       </div>
       <Scrolltotop/>
       <Routes>
-        <Route path='/login' element={<div className='auth-page'><SignIn/></div>}/>
-        <Route path='/signup' element={<div className='auth-page'><SignUp/></div>}/>
-        
+        <Route path='/login' element={<div className='auth-page'>{hasClerk ? <SignIn/> : <div className='auth-page'>Authentication not configured</div>}</div>}/>
+        <Route path='/signup' element={<div className='auth-page'>{hasClerk ? <SignUp/> : <div className='auth-page'>Authentication not configured</div>}</div>}/>
+
         <Route path='/' element={<Home/>}/>
-        <Route path='/product' element={<Arrayofproducts/>}/>
-        <Route path='/product' element={<Product product={productItem}/>}/>
+        <Route path='/product' element={<Product/>}/>
         <Route path='/singleproduct/:id' element={<Singleproduct/>}/>
         <Route path='/checkout' element={<Checkout/>}/>
         <Route path='/category/:category' element={<div className='category-page'><Category/></div>}/>
