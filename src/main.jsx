@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 
+/* const clerk_key = import.meta.env.VITE_CLERK_KEY; */
 const clerk_key = import.meta.env.VITE_CLERK_KEY;
 
 const root = createRoot(document.getElementById('root'));
