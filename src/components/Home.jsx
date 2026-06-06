@@ -198,7 +198,7 @@ export default function Home() {
 
         <div className="shop-by-cat-wrapper">
           <div className="shop-by-cat-img-con">
-            <Link to={"/product"}>
+            <Link to={"/category/Cosmetics"}>
               <img
                 className="shop-by-cat-img"
                 src="https://images.unsplash.com/photo-1710301616379-74c9a2514017?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -211,7 +211,7 @@ export default function Home() {
           </div>
 
           <div className="shop-by-cat-img-con">
-            <Link to={"/product"}>
+            <Link to={"/category/Skincare"}>
               <img
                 className="shop-by-cat-img"
                 src="https://plus.unsplash.com/premium_photo-1683133990522-4155deaacbbb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -224,7 +224,7 @@ export default function Home() {
           </div>
 
           <div className="shop-by-cat-img-con">
-            <Link to={"/product"}>
+            <Link to={"/category/BodyCare"}>
               <img
                 className="shop-by-cat-img"
                 src="https://plus.unsplash.com/premium_photo-1679046949226-b9d0870ab9c9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -237,7 +237,7 @@ export default function Home() {
           </div>
 
           <div className="shop-by-cat-img-con">
-            <Link to={"/product"}>
+            <Link to={"/category/HairCare"}>
               <img
                 id="fourth-cat-img"
                 className="shop-by-cat-img"
@@ -535,12 +535,6 @@ o=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fH
       </div>
 
 
-
-
-
-
-
-
       <form className="newsletter-container" action="" onSubmit={handleSubmit(onSubmit)}>
         <div className="newsletter-wrapper">
           <p className="newsletter-title">Join our Origins newsletter and Get Exclusive offers</p>
@@ -556,12 +550,7 @@ o=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fH
           {errors.email && <p style={{color: "crimson"}}>{errors.email.message}</p>}
         </div>
       </form>
-            
-
-      
-
-
-
+          
 
     </div>
   );
