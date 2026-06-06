@@ -4,6 +4,8 @@
     padding-top: 5rem;
     padding-left: 1rem;
 }
+
+/* Checkout.module.css — Styles for checkout layout, product list and summary */
 .empty-cart-con{
     display: flex;
     flex-direction: column;

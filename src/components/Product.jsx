@@ -1,3 +1,7 @@
+/**
+ * Product.jsx — Product listing with search and add-to-cart functionality.
+ * Uses `getProducts()` to load products and `useCart()` for cart actions.
+ */
 import React from 'react'
 import {useState, useContext} from 'react'
 import { Link } from 'react-router-dom';

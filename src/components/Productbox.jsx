@@ -1,3 +1,7 @@
+/**
+ * Productbox.jsx — Small presentational card for featured products on Home.
+ * Props: `product` (image URL), `productName`, `productAdv`, `price`.
+ */
 import React from 'react'
 
 export default function Productbox({product, productName, productAdv, price}) {

@@ -7,6 +7,8 @@
   min-height: calc(100vh - 80px);
 }
 
+/* category.module.css — Styles for Category page: sidebar, grid and cards */
+
 .sidebar{
   width: 260px;
   background: #fff;

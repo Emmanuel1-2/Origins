@@ -1,3 +1,7 @@
+/**
+ * Category.jsx — Category page with filters, sorting and product grid.
+ * Uses `getProducts()` and infers categories from product ids.
+ */
 import React, { useMemo, useState } from 'react'
 import getProducts from './Productdata'
 import styles from './category.module.css'

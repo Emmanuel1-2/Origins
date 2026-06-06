@@ -1,3 +1,7 @@
+/**
+ * Accordion.jsx — Accessible FAQ accordion component.
+ * Renders a small list of Q/A items and manages open panel state.
+ */
 import React, { useRef, useState } from 'react'
 import styles from './Accordion.module.css'
 
@@ -47,7 +51,7 @@ export default function Accordion() {
 						onClick={() => toggle(i)}
 						onKeyDown={(e) => onKeyDown(e, i)}
 					>
-						<span>{it.question}</span>
+						<span style={{color:"black"}} >{it.question}</span>
 						<span className={styles.symbol}>{openIndex === i ? '−' : '+'}</span>
 					</button>
 

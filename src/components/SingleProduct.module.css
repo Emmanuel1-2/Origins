@@ -6,6 +6,8 @@
     align-items: center;
     justify-content: center;
 }
+
+/* SingleProduct.module.css — Styles for the single product detail view (responsive) */
 .single-product-wrapper{
     display: flex;
     gap: 50px;

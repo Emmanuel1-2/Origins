@@ -1,3 +1,7 @@
+/**
+ * SingleProduct.jsx — Product detail page (reads `:id` from route).
+ * Shows product info and allows adding to cart via `useCart()`.
+ */
 import React from 'react'
 import getProducts from './Productdata';
 import styles from './SingleProduct.module.css'

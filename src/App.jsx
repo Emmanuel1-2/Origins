@@ -1,3 +1,7 @@
+/**
+ * App.jsx — Root component: navigation, routes, and Cart provider.
+ * Props: `hasClerk` (boolean) to enable Clerk auth integration.
+ */
 import React from 'react' 
 import Home from './components/Home'
 import Product from './components/Product'
@@ -82,16 +86,16 @@ export default function App({ hasClerk = true }) {
 
             <div id='mobile-nav-link-container' className="mobile-nav-links" style={{display: 'none'}}>
                 <Link className='navigation' to='/'>
-                  <div className='mobile-nav-div'>Home</div>
+                  <div onClick={closeMenu} className='mobile-nav-div'>Home</div>
                 </Link>
                 <Link className='navigation' to='/product'>
-                  <div className='mobile-nav-div'>Product</div>
+                  <div onClick={closeMenu} className='mobile-nav-div'>Product</div>
                 </Link>
                 <Link className='navigation' to='/category'>
-                  <div className='mobile-nav-div'>Category</div>
+                  <div onClick={closeMenu} className='mobile-nav-div'>Category</div>
                 </Link>
                 <Link className='navigation' to='/checkout'>
-                  <div className='mobile-nav-div'>Checkout</div>
+                  <div onClick={closeMenu} className='mobile-nav-div'>Checkout</div>
                 </Link>
             </div>
             

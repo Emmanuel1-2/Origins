@@ -1,3 +1,7 @@
+/**
+ * Checkout.jsx — Checkout page: lists cart items, computes subtotal/tax/total.
+ * Uses `useCart()` for cart actions and `getProducts()` to resolve items.
+ */
 import React from 'react'
 import { useCart } from './Cartcontext'
 import getProducts from './Productdata'

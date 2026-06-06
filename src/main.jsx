@@ -1,3 +1,7 @@
+/**
+ * main.jsx — Mounts the React app, provides Router and (optional) Clerk auth.
+ * Reads `VITE_CLERK_KEY` and passes `hasClerk` to `App`.
+ */
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'

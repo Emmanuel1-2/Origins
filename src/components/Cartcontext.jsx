@@ -1,3 +1,7 @@
+/**
+ * Cartcontext.jsx — Provides `CartContext` and `useCart()` hook.
+ * API: `addToCart`, `decreaseQuantity`, `removeFromCart`, `clearCart`.
+ */
 import React from 'react'
 import { createContext, useState, useContext } from 'react'
 

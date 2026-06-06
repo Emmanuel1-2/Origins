@@ -2,6 +2,8 @@
 .products-page{
     background-color: #d3d2d2;
 }
+
+/* Product.module.css — Styles for the products listing page and responsive layout */
 .products-intro-con{
     margin-top: 2rem;
     background-image: url('../assets/model2Main.jpg');

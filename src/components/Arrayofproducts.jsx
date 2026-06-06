@@ -1,3 +1,7 @@
+/**
+ * Arrayofproducts.jsx — Example ProductsContext provider used for demo data.
+ * Exports `ProductsContext` and renders `Product` inside the provider.
+ */
 import React from 'react'
 import { createContext } from 'react'
 import Product from './Product'
