@@ -52,7 +52,7 @@ export default function Accordion() {
 						onKeyDown={(e) => onKeyDown(e, i)}
 					>
 						<span style={{color:"black"}} >{it.question}</span>
-						<span className={styles.symbol}>{openIndex === i ? '−' : '+'}</span>
+						<span style={{color:"black"}}  className={styles.symbol}>{openIndex === i ? '−' : '+'}</span>
 					</button>
 
 					<div
