@@ -8,6 +8,14 @@
     box-sizing: border-box;
 }
 @font-face {
+    font-family: "Playfair1";
+    src: url("../src/assets/Playfair1.ttf");
+}
+@font-face {
+    font-family: "Playfair2";
+    src: url("../src/assets/Playfair2.ttf");
+}
+@font-face {
     font-family: "Akt";
     src: url("../src/assets/Akt-Light.ttf");
 }
@@ -590,6 +598,7 @@
         text-align: center;
     }
     #hero-text1{
+        font-family: 'playfair2';
         font-size: 40px;
     }
     #hero-text2{
@@ -841,6 +850,7 @@
         text-align: center;
     }
     #hero-text1{
+        font-family: 'playfair2';
         font-size: 40px;
     }
     #hero-text2{
